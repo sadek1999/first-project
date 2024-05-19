@@ -8,9 +8,11 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req: Request, res: Response) => {
+const controller=  (req: Request, res: Response) => {
   const a = 10;
   res.send(a);
-});
+}
+
+app.get('/', controller);
 
 export default app;
