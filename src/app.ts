@@ -9,12 +9,12 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/v1/students',StudentRout)
+app.use('/api/v1/students', StudentRout);
 
-const controller=  (req: Request, res: Response) => {
+const controller = (req: Request, res: Response) => {
   const a = 10;
   res.send(a);
-}
+};
 
 app.get('/', controller);
 
