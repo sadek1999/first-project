@@ -9,7 +9,17 @@ import {
 const userNameSchema = new Schema<UserName>({
   firstName: {
     type: String,
+    trim:true,
     required: [true, 'First name is required'],
+    maxLength:[20,'first name can not more then 20 characters '],
+    validate:{
+        validator:function(value:string){
+            const firstNamestr= value.charAt(0).toUpperCase()+value.slice(1);
+            return firstNamestr===value
+    
+        },
+        message:'{VALUE} is not in capitalize format '
+    }
   },
   meddleName: {
     type: String,
@@ -24,6 +34,7 @@ const guardianSchema = new Schema<Guardian>({
   fatherName: {
     type: String,
     required: [true, "Father's name is required"],
+  
   },
   fatherOccupation: {
     type: String,
