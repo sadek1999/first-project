@@ -17,7 +17,7 @@ export type LocalGuardian = {
 
 export type UserName = {
   firstName: string;
-  meddleName: string;
+  meddleName?: string;
   lastName: string;
 };
 
